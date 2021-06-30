@@ -1,6 +1,6 @@
         ORG 	100h
 
-	    section	.text
+        section	.text
 
         XOR AX, AX
         XOR SI, SI
@@ -8,16 +8,16 @@
         XOR CX, CX
         XOR DX, DX
 
-	    MOV 	DX, msg1
-	    CALL  	CADENA
+        MOV 	DX, msg1
+        CALL  	CADENA
 
-	    MOV 	BP, frase
-	    CALL  	LeerCadena
+        MOV 	BP, frase
+        CALL  	LeerCadena
 
         CALL    COMPARAR
         CALL	EsperarTecla
 
-	    INT 	20h
+        INT 	20h
 
         section	.data
 
@@ -42,7 +42,7 @@
         INC     SI              
         JMP     WHILE           
         EXIT:
-	    MOV	byte [BP+SI], "$"	
+        MOV	byte [BP+SI], "$"	
         RET
 
         COMPARAR:
@@ -64,11 +64,11 @@
         RET
 
         CADENA:
-	    MOV 	AH, 09h
-	    INT 	21h
-	    RET
+        MOV 	AH, 09h
+        INT 	21h
+        RET
 
         EXIT0:
-	    MOV 	DX, msg2
-	    CALL 	CADENA	
+        MOV 	DX, msg2
+        CALL 	CADENA	
         ret
